@@ -1,45 +1,11 @@
-# Version Control Ignore File
-
-# Python / Virtual Environment
 venv/
 .venv/
+node_modules/
 __pycache__/
 *.pyc
-*.pyo
-*.pyd
-.Python
-env/
-pip-log.txt
-pip-delete-this-directory.txt
-
-# Node / Frontend Build
-node_modules/
-dist/
-dist-ssr/
-*.local
-.eslintcache
-.stylelintcache
-
-# Large Data & Machine Learning Artifacts
-server/dataset/*.csv
-server/dataset/*.zip
-server/dataset/UpdatedResumeDataSet.csv/
-server/uploads/*
-!server/uploads/.gitkeep
-server/trained_model/*.joblib
-!server/trained_model/.gitkeep
-
-# Database
-server/*.db
-server/*.sqlite3
-
-# IDEs & System files
-.vscode/
-.idea/
-.DS_Store
-Thumbs.db
-ehthumbs.db
-
-# Environmental variables
 .env
-.env*.local
+.DS_Store
+dist/
+build/
+server/uploads/
+server/database.db

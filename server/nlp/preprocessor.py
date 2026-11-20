@@ -10,7 +10,14 @@ try:
         print("Downloading en_core_web_sm model...")
         import subprocess
         import sys
-        subprocess.check_call([sys.executable, "-m", "spacy", "download", "en_core_web_sm"])
+        # Try direct wheel/tarball install if standard spacy download fails
+        try:
+            subprocess.check_call([
+                sys.executable, "-m", "pip", "install", 
+                "https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.7.1/en_core_web_sm-3.7.1.tar.gz"
+            ])
+        except Exception:
+            subprocess.check_call([sys.executable, "-m", "spacy", "download", "en_core_web_sm"])
         nlp = spacy.load("en_core_web_sm")
 except ImportError:
     print("spaCy is not installed. Please install it using: pip install spacy")
